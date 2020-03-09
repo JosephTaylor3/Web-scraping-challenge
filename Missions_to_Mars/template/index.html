@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Missions to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    
+    <!-- button with href=/scrape kicks off the scraper app, which is in our app.py and scrape_craigslist.py files --> 
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Mars Data!</a></p>
+    </div>
+
+    <!-- Mars News -->
+    <div class="row" id="Mars-News">
+      <div class="col-md-12">
+        <h3 class="heading">{{mars.News_Title}}</h3>
+        <p> {{mars.News_Content}}</p>
+      </div>
+    </div>
+
+    <!-- Mars Featured Image -->
+    <!--img src="{{ mars.featured_image_url}}" alt="Mars Featured Image"-->
+      <!--was unable to complete this code-->
+
+    <!--Mars Weather-->
+    <div class="row">
+      <div class="col-md-4">
+            <h3 class="heading">Current Weather on Mars</h3>
+            <p> {{mars.mars_weather}}</p>
+      </div>
+    </div>
+
+    <!-- Mars Facts-->
+    
+    <div class="row">
+        <div class="col-md-4">
+              <h3>Mars Facts</h3>
+              <table class="table">{{mars.html_table}}</table>
+        </div>
+      </div>
+
+
+    <!-- Mars Hemispheres -->
+    <div class="row">
+        <h2> Mars Hemispheres </h2>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12 col-md-6"> 
+            <img src="{{mars.valles_url}}" alt="Valles Hemisphere Enhanced" style="width:400px;height:400px;"> 
+            <h5>{{valles_title}}</h5>
+        </div>
+        <div class="col-sm-12 col-md-6"> 
+            <img src="{{mars.cerberus_url}}" alt="Cerberus Hemisphere Enhanced" style="width:400px;height:400px;"> 
+            <h5>{{cerberus_title}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6"> 
+            <img src="{{mars.schiaparelli_url}}" alt="Schiaparelli Hemisphere Enhanced" style="width:400px;height:400px;"> 
+            <h5>{{schiaparelli_title}}</h5>
+        </div>
+        <div class="col-sm-12 col-md-6"> 
+            <img src="{{mars.syrtis_url}}" alt="Syrtis Hemisphere Enhanced" style="width:400px;height:400px;"> 
+            <h5>{{Syrtis_title}}</h5>
+        </div>
+    </div>
+
+
+    
+
+
+
+  </div>
+</body>
+
+</html>
